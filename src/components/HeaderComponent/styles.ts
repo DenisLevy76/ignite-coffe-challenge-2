@@ -41,6 +41,21 @@ export const CartLink = styled(IconButtonContainer)`
   background: ${({ theme }) => theme.colors.yellowLight};
   color: ${({ theme }) => theme.colors.yellowDark};
 
+  position: relative;
+
+  > .cart-length {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.colors.yellowDark};
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: ${({ theme }) => theme.colors.white};
+  }
+
   &:hover {
     background: ${({ theme }) => theme.colors.yellowLight} !important;
     color: ${({ theme }) => theme.colors.yellowDark};

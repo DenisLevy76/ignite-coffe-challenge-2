@@ -4,6 +4,7 @@ import { ContainerComponent } from '../ContainerComponent'
 import { CartLink, Container, HeaderNav } from './styles'
 
 export const HeaderComponent: React.FC = () => {
+  const cart = []
   return (
     <Container>
       <ContainerComponent>
@@ -19,6 +20,9 @@ export const HeaderComponent: React.FC = () => {
           </span>
           <CartLink as={Link} to="/cart" title="Ir para o carrinho">
             <ShoppingCart size={24} weight="fill" />
+            {cart.length > 0 && (
+              <span className="cart-length">{cart.length}</span>
+            )}
           </CartLink>
         </HeaderNav>
       </ContainerComponent>
