@@ -10,24 +10,35 @@ export const GlobalStyles = createGlobalStyle`
     }
     :focus {
       outline: none;
-      box-shadow: 0 0 0 2px ${theme.colors['green-500']};
+      box-shadow: 0 0 0 2px ${theme.colors.purple};
       border-radius: 4px;
     }
 
     body {
-      background: ${theme.colors['gray-900']};
-      color: ${theme.colors['gray-300']};
+      background: ${theme.colors.background};
     }
 
     body,
     input,
     textarea,
     button {
-      color: ${theme.colors['gray-100']};
+      color: ${theme.colors.baseText};
       font-family: ${theme.type.fontFamily};
       font-weight: 400;
       font-size: 1rem;
       -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong {
+      color: ${theme.colors.baseTitle};
+      font-family: ${theme.type.titleFontFamily};
+      font-weight: bold;
     }
 
     ul,
