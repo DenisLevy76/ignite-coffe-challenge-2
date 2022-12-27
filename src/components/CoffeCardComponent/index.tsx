@@ -12,26 +12,29 @@ import {
 import { CoffeCardComponentProps } from './types'
 
 export const CoffeCardComponent: React.FC<CoffeCardComponentProps> = ({
-  product: { imageUrl, price, shortDescription, tags, title, imageAlt },
+  product: { imageUrl, price, shortDescription, tags, title, imageAlt, id },
 }) => {
   return (
     <Container>
-      <CoffeWrapper to="/404">
+      <CoffeWrapper to={`/coffe/${id}`}>
         <CoffeImage src={imageUrl} alt={imageAlt} />
         <ul>
-          {tags.map((tag) => (
-            <li key={tag}>
-              <CoffeTags>{tag}</CoffeTags>
-            </li>
-          ))}
+          {tags.map(
+            (tag, index) =>
+              index < 3 && (
+                <li key={tag}>
+                  <CoffeTags>{tag}</CoffeTags>
+                </li>
+              ),
+          )}
         </ul>
 
         <h2>{title}</h2>
-        <p>{shortDescription}</p>
+        <p className="coffe__description">{shortDescription}</p>
       </CoffeWrapper>
       <CardFooter>
         <CoffePrice>
-          R$ <strong>9,90</strong>
+          R$ <strong>{price.toFixed(2).replace('.', ',')}</strong>
         </CoffePrice>
         <div className="cart__button-wrapper">
           <QuantityInputWrapper>

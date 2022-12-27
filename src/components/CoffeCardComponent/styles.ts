@@ -9,9 +9,7 @@ export const Container = styled.article`
 
     display: flex;
     flex-direction: column;
-
-    align-items: center;
-    text-align: center;
+    justify-content: space-between;
   `}
 `
 export const CoffeWrapper = styled(Link)`
@@ -19,9 +17,20 @@ export const CoffeWrapper = styled(Link)`
   outline: none !important;
   padding-bottom: 2rem;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 200px;
+  overflow: hidden;
+
+  align-items: center;
+  text-align: center;
+  width: 100%;
+
   ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     overflow: hidden;
     gap: 0.5rem;
 
@@ -29,6 +38,28 @@ export const CoffeWrapper = styled(Link)`
 
     margin-top: 0.75rem;
     margin-bottom: 1rem;
+  }
+
+  > h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .coffe__description {
+    font-size: 0.875rem;
+
+    line-height: 130%;
+    height: 55px;
+    color: ${({ theme }) => theme.colors.baseLabel};
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   &:focus,
@@ -46,6 +77,8 @@ export const CardFooter = styled.footer`
     display: flex;
     flex-wrap: nowrap;
     gap: 0.5rem;
+
+    text-align: center;
   }
 `
 
@@ -86,7 +119,6 @@ export const QuantityInputWrapper = styled.div`
       background: transparent;
       width: 4.5rem;
       padding: 0.75rem 0.5rem;
-      text-align: center;
     }
   `}
 `
