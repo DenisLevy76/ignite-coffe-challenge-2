@@ -21,6 +21,10 @@ export const CoffeList = styled.ul`
   row-gap: 3rem;
 
   @media (max-width: 850px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 530px) {
     grid-template-columns: 1fr;
   }
 `

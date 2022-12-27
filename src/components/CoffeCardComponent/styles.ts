@@ -10,6 +10,7 @@ export const Container = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
   `}
 `
 export const CoffeWrapper = styled(Link)`
@@ -40,7 +41,7 @@ export const CoffeWrapper = styled(Link)`
     margin-bottom: 1rem;
   }
 
-  > h2 {
+  > .coffe__title {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -111,31 +112,6 @@ export const CoffePrice = styled.span`
   `}
 `
 
-export const QuantityInputWrapper = styled.div`
-  ${({ theme }) => css`
-    background: ${theme.colors.baseButton};
-    border-radius: 8px;
-    > input {
-      background: transparent;
-      width: 4.5rem;
-      padding: 0.75rem 0.5rem;
-    }
-  `}
-`
-
 export const IconButton = styled.button`
-  ${({ theme }) => css`
-    padding: 0.5rem;
-    background: ${theme.colors.purpleDark};
-    color: ${theme.colors.baseCard};
-    border-radius: 8px;
-    font-size: 0;
-
-    cursor: pointer;
-    transition: 0.15s;
-
-    &:hover {
-      background: ${theme.colors.purple};
-    }
-  `}
+  ${({ theme }) => css``}
 `
