@@ -22,6 +22,6 @@ export const defaultTheme = {
 
   type: {
     fontFamily: 'Roboto, sans-serif',
-    titleFontFamily: 'Roboto, sans-serif',
+    titleFontFamily: "'Baloo 2', sans-serif",
   },
 }

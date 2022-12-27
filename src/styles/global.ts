@@ -9,8 +9,7 @@ export const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
     }
     :focus {
-      outline: none;
-      box-shadow: 0 0 0 2px ${theme.colors.purple};
+      outline: 2px solid ${theme.colors.purple};
       border-radius: 4px;
     }
 
@@ -21,12 +20,14 @@ export const GlobalStyles = createGlobalStyle`
     body,
     input,
     textarea,
-    button {
+    button,
+    a {
       color: ${theme.colors.baseText};
       font-family: ${theme.type.fontFamily};
       font-weight: 400;
       font-size: 1rem;
       -webkit-font-smoothing: antialiased;
+      text-decoration: none;
     }
 
     h1,
@@ -39,6 +40,7 @@ export const GlobalStyles = createGlobalStyle`
       color: ${theme.colors.baseTitle};
       font-family: ${theme.type.titleFontFamily};
       font-weight: bold;
+      font-size: 1.25rem;
     }
 
     ul,
