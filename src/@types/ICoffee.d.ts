@@ -1,5 +1,5 @@
 export interface Icoffee {
-  id: string
+  id: number
   title: string
   imageUrl: string
   price: number

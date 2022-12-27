@@ -22,7 +22,6 @@ export const CoffeeWrapper = styled.article`
   justify-content: center;
 
   max-width: 200px;
-  overflow: hidden;
 
   align-items: center;
   text-align: center;

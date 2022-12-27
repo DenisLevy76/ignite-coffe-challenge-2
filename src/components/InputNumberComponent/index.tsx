@@ -29,7 +29,6 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
       </IconButtonComponent>
       <input
         type="number"
-        defaultValue={1}
         name="quantity"
         id={id}
         onChange={(event) => setValue(Number(event.target.value))}
