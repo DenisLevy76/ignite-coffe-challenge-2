@@ -16,7 +16,7 @@ export const CoffeeCardComponent: React.FC<coffeeCardComponentProps> = ({
 }) => {
   return (
     <Container>
-      <CoffeeWrapper to={`/coffee/${id}`}>
+      <CoffeeWrapper>
         <CoffeeImage src={imageUrl} alt={imageAlt} />
         <ul>
           {tags.map(
@@ -37,7 +37,11 @@ export const CoffeeCardComponent: React.FC<coffeeCardComponentProps> = ({
           R$ <strong>{price.toFixed(2).replace('.', ',')}</strong>
         </CoffeePrice>
         <div className="cart__button-wrapper">
-          <InputNumberComponent id={`${id}Quantity`} ariaLabel="Quantidade" />
+          <InputNumberComponent
+            id={`${id}Quantity`}
+            ariaLabel="Quantidade"
+            readOnly
+          />
           <IconButtonComponent
             ariaLabel="Adicionar ao carrinho"
             title="Adicionar ao carrinho"

@@ -29,6 +29,7 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
         ariaLabel="Diminuir quantidade"
         title="Diminuir quantidade"
         onClick={() => setValue((state) => state - 1)}
+        disabled={value === 0}
       >
         <Minus size={14} />
       </IconButtonComponent>
@@ -46,6 +47,7 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
         ariaLabel="Diminuir quantidade"
         title="Diminuir quantidade"
         onClick={() => setValue((state) => state + 1)}
+        disabled={value === 11}
       >
         <Plus size={14} />
       </IconButtonComponent>

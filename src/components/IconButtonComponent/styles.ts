@@ -13,9 +13,13 @@ export const Container = styled.button<{
     cursor: pointer;
     transition: 0.15s;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: ${background ? theme.colors.purple : 'transparent'};
       color: ${!background && theme.colors.purple};
+    }
+
+    &:disabled {
+      opacity: 0.3;
     }
   `}
 `

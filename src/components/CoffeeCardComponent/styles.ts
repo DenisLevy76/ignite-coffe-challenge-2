@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
 
 export const Container = styled.article`
   ${({ theme }) => css`
@@ -13,7 +12,7 @@ export const Container = styled.article`
     align-items: center;
   `}
 `
-export const CoffeeWrapper = styled(Link)`
+export const CoffeeWrapper = styled.article`
   margin-top: calc(0px - 7rem / 2);
   outline: none !important;
   padding-bottom: 2rem;
