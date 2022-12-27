@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 1120px;
-  margin: 2rem auto;
-  padding: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  > section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 `
 
 export const CoffeesTitle = styled.h2`

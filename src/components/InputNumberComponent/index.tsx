@@ -1,14 +1,8 @@
 import { Minus, Plus } from 'phosphor-react'
-import { InputHTMLAttributes, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IconButtonComponent } from '../IconButtonComponent'
 import { Container } from './styles'
-
-export interface InputNumberComponentProps
-  extends InputHTMLAttributes<HTMLInputElement> {
-  id: string
-  ariaLabel: string
-  onValueChange?: (newValue: number) => void
-}
+import { InputNumberComponentProps } from './types'
 
 export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
   ariaLabel,

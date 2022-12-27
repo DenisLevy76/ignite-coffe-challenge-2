@@ -1,12 +1,5 @@
-import { ButtonHTMLAttributes } from 'react'
 import { Container } from './styles'
-
-export interface IconButtonComponentProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
-  ariaLabel: string
-  title: string
-  background?: boolean
-}
+import { IconButtonComponentProps } from './types'
 
 export const IconButtonComponent: React.FC<IconButtonComponentProps> = ({
   ariaLabel,
