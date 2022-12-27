@@ -1,4 +1,4 @@
-import { Container } from './styles'
+import { IconButtonContainer } from './styles'
 import { IconButtonComponentProps } from './types'
 
 export const IconButtonComponent: React.FC<IconButtonComponentProps> = ({
@@ -6,5 +6,5 @@ export const IconButtonComponent: React.FC<IconButtonComponentProps> = ({
   title,
   ...props
 }) => {
-  return <Container aria-label={ariaLabel} title={title} {...props} />
+  return <IconButtonContainer aria-label={ariaLabel} title={title} {...props} />
 }

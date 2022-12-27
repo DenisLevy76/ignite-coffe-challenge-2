@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.button<{
+export const IconButtonContainer = styled.button<{
   background?: boolean
 }>`
   ${({ theme, background = true }) => css`
