@@ -1,16 +1,16 @@
-import { CoffeCardComponent } from '../../components/CoffeCardComponent'
-import { CoffeList, CoffesTitle, Container } from './styles'
+import { CoffeeCardComponent } from '../../components/CoffeeCardComponent'
+import { CoffeeList, CoffeesTitle, Container } from './styles'
 
 export const Home: React.FC = () => {
   return (
     <Container>
-      <CoffesTitle>Nossos cafés</CoffesTitle>
-      <CoffeList>
+      <CoffeesTitle>Nossos cafés</CoffeesTitle>
+      <CoffeeList>
         <li>
-          <CoffeCardComponent
+          <CoffeeCardComponent
             product={{
               id: crypto.randomUUID(),
-              imageUrl: '/images/coffes/ChocolateQuente.png',
+              imageUrl: '/images/coffees/ChocolateQuente.png',
               title:
                 'Chocolate Quente Chocolate Quente Chocolate Quente Chocolate Quente',
               shortDescription:
@@ -23,10 +23,10 @@ export const Home: React.FC = () => {
           />
         </li>
         <li>
-          <CoffeCardComponent
+          <CoffeeCardComponent
             product={{
               id: crypto.randomUUID(),
-              imageUrl: '/images/coffes/Americano.png',
+              imageUrl: '/images/coffees/Americano.png',
               title: 'Expresso Americano',
               shortDescription:
                 'Expresso diluído, menos intenso que o tradicional',
@@ -38,10 +38,10 @@ export const Home: React.FC = () => {
           />
         </li>
         <li>
-          <CoffeCardComponent
+          <CoffeeCardComponent
             product={{
               id: crypto.randomUUID(),
-              imageUrl: '/images/coffes/CafecomLeite.png',
+              imageUrl: '/images/coffees/CafecomLeite.png',
               title: 'Café com Leite',
               shortDescription:
                 'Meio a meio de expresso tradicional com leite vaporizado',
@@ -53,10 +53,10 @@ export const Home: React.FC = () => {
           />
         </li>
         <li>
-          <CoffeCardComponent
+          <CoffeeCardComponent
             product={{
               id: crypto.randomUUID(),
-              imageUrl: '/images/coffes/Capuccino.png',
+              imageUrl: '/images/coffees/Capuccino.png',
               title: 'Capuccino',
               shortDescription:
                 'Bebida com canela feita de doses iguais de café, leite e espuma',
@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
             }}
           />
         </li>
-      </CoffeList>
+      </CoffeeList>
     </Container>
   )
 }

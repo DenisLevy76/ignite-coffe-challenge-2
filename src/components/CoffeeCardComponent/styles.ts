@@ -13,7 +13,7 @@ export const Container = styled.article`
     align-items: center;
   `}
 `
-export const CoffeWrapper = styled(Link)`
+export const CoffeeWrapper = styled(Link)`
   margin-top: calc(0px - 7rem / 2);
   outline: none !important;
   padding-bottom: 2rem;
@@ -41,7 +41,7 @@ export const CoffeWrapper = styled(Link)`
     margin-bottom: 1rem;
   }
 
-  > .coffe__title {
+  > .coffee__title {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -49,7 +49,7 @@ export const CoffeWrapper = styled(Link)`
     -webkit-box-orient: vertical;
   }
 
-  .coffe__description {
+  .coffee__description {
     font-size: 0.875rem;
 
     line-height: 130%;
@@ -83,12 +83,12 @@ export const CardFooter = styled.footer`
   }
 `
 
-export const CoffeImage = styled.img`
+export const CoffeeImage = styled.img`
   width: 7.5rem;
   height: 7.5rem;
   object-fit: cover;
 `
-export const CoffeTags = styled.span`
+export const CoffeeTags = styled.span`
   ${({ theme }) => css`
     background: ${theme.colors.yellowLight};
     color: ${theme.colors.yellowDark};
@@ -100,7 +100,7 @@ export const CoffeTags = styled.span`
     font-size: 0.625rem;
   `}
 `
-export const CoffePrice = styled.span`
+export const CoffeePrice = styled.span`
   ${({ theme }) => css`
     font-size: 0.875rem;
 

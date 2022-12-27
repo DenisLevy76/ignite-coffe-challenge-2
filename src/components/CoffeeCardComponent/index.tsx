@@ -3,41 +3,41 @@ import { IconButtonComponent } from '../IconButtonComponent'
 import { InputNumberComponent } from '../InputNumberComponent'
 import {
   CardFooter,
-  CoffeImage,
-  CoffePrice,
-  CoffeTags,
-  CoffeWrapper,
+  CoffeeImage,
+  CoffeePrice,
+  CoffeeTags,
+  CoffeeWrapper,
   Container,
 } from './styles'
-import { CoffeCardComponentProps } from './types'
+import { coffeeCardComponentProps } from './types'
 
-export const CoffeCardComponent: React.FC<CoffeCardComponentProps> = ({
+export const CoffeeCardComponent: React.FC<coffeeCardComponentProps> = ({
   product: { imageUrl, price, shortDescription, tags, title, imageAlt, id },
 }) => {
   return (
     <Container>
-      <CoffeWrapper to={`/coffe/${id}`}>
-        <CoffeImage src={imageUrl} alt={imageAlt} />
+      <CoffeeWrapper to={`/coffee/${id}`}>
+        <CoffeeImage src={imageUrl} alt={imageAlt} />
         <ul>
           {tags.map(
             (tag, index) =>
               index < 3 && (
                 <li key={tag}>
-                  <CoffeTags>{tag}</CoffeTags>
+                  <CoffeeTags>{tag}</CoffeeTags>
                 </li>
               ),
           )}
         </ul>
 
-        <h2 className="coffe__title">{title}</h2>
-        <p className="coffe__description">{shortDescription}</p>
-      </CoffeWrapper>
+        <h2 className="coffee__title">{title}</h2>
+        <p className="coffee__description">{shortDescription}</p>
+      </CoffeeWrapper>
       <CardFooter>
-        <CoffePrice>
+        <CoffeePrice>
           R$ <strong>{price.toFixed(2).replace('.', ',')}</strong>
-        </CoffePrice>
+        </CoffeePrice>
         <div className="cart__button-wrapper">
-          <InputNumberComponent />
+          <InputNumberComponent id={`${id}Quantity`} ariaLabel="Quantidade" />
           <IconButtonComponent
             ariaLabel="Adicionar ao carrinho"
             title="Adicionar ao carrinho"

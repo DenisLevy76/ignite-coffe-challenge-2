@@ -10,11 +10,11 @@ export const Container = styled.div`
   gap: 3rem;
 `
 
-export const CoffesTitle = styled.h2`
+export const CoffeesTitle = styled.h2`
   font-size: 2rem;
 `
 
-export const CoffeList = styled.ul`
+export const CoffeeList = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
