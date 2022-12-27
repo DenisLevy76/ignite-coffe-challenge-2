@@ -111,7 +111,3 @@ export const CoffePrice = styled.span`
     }
   `}
 `
-
-export const IconButton = styled.button`
-  ${({ theme }) => css``}
-`
