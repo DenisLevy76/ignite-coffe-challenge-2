@@ -29,7 +29,7 @@ export const AboutSection = styled.section`
     }
 
     .home__image {
-      width: 45%;
+      width: 44%;
     }
 
     .home_characteristics {

@@ -18,6 +18,7 @@ export const defaultTheme = {
     yellowDark: '#C47F17',
     yellow: '#DBAC2C',
     yellowLight: '#F1E9C9',
+    outline: `2px solid #8047F8`,
   },
 
   type: {

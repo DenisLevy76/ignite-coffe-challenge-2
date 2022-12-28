@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
     }
     :focus {
-      outline: 2px solid ${theme.colors.purple};
+      outline: ${theme.colors.outline};
       border-radius: 4px;
     }
 

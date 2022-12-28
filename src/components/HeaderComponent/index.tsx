@@ -18,7 +18,7 @@ export const HeaderComponent: React.FC = () => {
             <MapPin size={22} weight="fill" />
             <p>Belém, PA</p>
           </span>
-          <CartLink as={Link} to="/cart" title="Ir para o carrinho">
+          <CartLink as={Link} to="/checkout" title="Ir para o checkout">
             <ShoppingCart size={24} weight="fill" />
             {cart.length > 0 && (
               <span className="cart-length">{cart.length}</span>
