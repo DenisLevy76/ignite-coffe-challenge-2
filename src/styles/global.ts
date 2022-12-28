@@ -47,5 +47,11 @@ export const GlobalStyles = createGlobalStyle`
     ol {
       list-style: none;
     }
+
+    @media (max-width: 380px) {
+      html {
+        font-size: 87.5%;
+      }
+    }
   `}
 `

@@ -22,6 +22,8 @@ export const Container = styled.div`
   .controls {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   > .price {
@@ -42,8 +44,10 @@ export const RemoveFromCartButton = styled(ButtonComponent)`
     align-items: center;
     gap: 0.25rem;
 
-    padding: 0 0.5rem;
+    padding: 0.375rem 0.5rem;
     font-size: 0.75rem;
+
+    width: auto;
 
     > svg {
       color: ${theme.colors.purple};

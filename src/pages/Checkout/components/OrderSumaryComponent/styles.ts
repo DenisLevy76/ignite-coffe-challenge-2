@@ -4,6 +4,15 @@ export const Container = styled.div`
   border-radius: 6px 44px;
   padding: 2.5rem;
   background: ${({ theme }) => theme.colors.baseCard};
+
+  @media (max-width: 850px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 350px) {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
 `
 
 export const CoffeesList = styled.ul`

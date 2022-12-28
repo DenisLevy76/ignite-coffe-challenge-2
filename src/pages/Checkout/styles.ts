@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.main`
+  padding-bottom: 4rem;
   > form {
     display: grid;
     grid-template-columns: 1fr 448px;
@@ -10,6 +11,14 @@ export const Container = styled.main`
       display: flex;
       flex-direction: column;
       gap: 1rem;
+    }
+
+    @media (max-width: 1120px) {
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    @media (max-width: 820px) {
+      grid-template-columns: 1fr;
     }
   }
 `
@@ -55,4 +64,8 @@ export const PaymentFieldset = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+
+  @media (max-width: 1120px) {
+    grid-template-columns: 1fr;
+  }
 `
