@@ -1,5 +1,6 @@
 import { CoffeeCardListComponent } from '../../../../components/CoffeeCardListComponent'
-import { COFFEES } from '../../../Home/data/coffees'
+import { useCart } from '../../../../hooks/useCart'
+import { numberToPrice } from '../../../utils/numberToPrice'
 import {
   CoffeesList,
   ConfirmOrderButton,
@@ -8,31 +9,28 @@ import {
 } from './styles'
 
 export const OrderSumaryComponent: React.FC = () => {
+  const { cart, totalItemsPrice, deliveryFee, totalPrice } = useCart()
   return (
     <Container>
       <CoffeesList>
-        {COFFEES.map((coffee, index) => {
-          if (index < 3)
-            return (
-              <li key={coffee.id}>
-                <CoffeeCardListComponent coffee={coffee} />
-              </li>
-            )
-          else return null
-        })}
+        {cart.map((coffee) => (
+          <li key={coffee.id}>
+            <CoffeeCardListComponent coffee={coffee} />
+          </li>
+        ))}
       </CoffeesList>
       <OrderPrices>
         <span>
           <p>Total de itens</p>
-          <p>R$ 29,70</p>
+          <p>{numberToPrice(totalItemsPrice)}</p>
         </span>
         <span>
           <p>Entrega</p>
-          <p>R$ 3,50</p>
+          <p>{numberToPrice(deliveryFee)}</p>
         </span>
         <span>
-          <strong>Entrega</strong>
-          <strong>R$ 3,50</strong>
+          <strong>Total</strong>
+          <strong>{numberToPrice(totalPrice)}</strong>
         </span>
       </OrderPrices>
       <ConfirmOrderButton>Confirmar pedido</ConfirmOrderButton>

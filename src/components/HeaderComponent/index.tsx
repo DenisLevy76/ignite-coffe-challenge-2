@@ -8,10 +8,12 @@ export const HeaderComponent: React.FC = () => {
   return (
     <Container>
       <ContainerComponent>
-        <img
-          src="/icons/extendedLogo.svg"
-          alt="Um copo de café, roxo, com um desenho de um foguete decolando."
-        />
+        <Link to="/">
+          <img
+            src="/icons/extendedLogo.svg"
+            alt="Um copo de café, roxo, com um desenho de um foguete decolando."
+          />
+        </Link>
 
         <HeaderNav>
           <span>

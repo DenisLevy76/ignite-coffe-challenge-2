@@ -27,6 +27,9 @@ export const Container = styled.div`
   > .price {
     font-family: ${({ theme }) => theme.type.fontFamily};
     color: ${({ theme }) => theme.colors.baseText};
+    width: 4rem;
+    text-align: right;
+    font-size: 1rem;
   }
 `
 
@@ -40,6 +43,7 @@ export const RemoveFromCartButton = styled(ButtonComponent)`
     gap: 0.25rem;
 
     padding: 0 0.5rem;
+    font-size: 0.75rem;
 
     > svg {
       color: ${theme.colors.purple};

@@ -7,23 +7,25 @@ import { InputNumberComponentProps } from './types'
 export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
   ariaLabel,
   id,
+  value,
   onValueChange,
   ...props
 }) => {
-  const [value, setValue] = useState<number>(1)
+  const [inputValue, setInputValue] = useState<number>(Number(value) || 1)
 
   useEffect(() => {
-    onValueChange && onValueChange(value)
-  }, [value, onValueChange])
+    onValueChange && onValueChange(inputValue)
+  }, [inputValue])
 
   return (
     <Container htmlFor={id} aria-label={ariaLabel}>
       <IconButtonComponent
+        type="button"
         background={false}
         ariaLabel="Diminuir quantidade"
         title="Diminuir quantidade"
-        onClick={() => setValue((state) => state - 1)}
-        disabled={value === 0}
+        onClick={() => setInputValue((state) => state - 1)}
+        disabled={inputValue === 1}
       >
         <Minus size={14} />
       </IconButtonComponent>
@@ -31,16 +33,17 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
         type="number"
         name="quantity"
         id={id}
-        onChange={(event) => setValue(Number(event.target.value))}
-        value={value}
+        onChange={(event) => setInputValue(Number(event.target.value))}
+        value={inputValue}
         {...props}
       />
       <IconButtonComponent
+        type="button"
         background={false}
         ariaLabel="Diminuir quantidade"
         title="Diminuir quantidade"
-        onClick={() => setValue((state) => state + 1)}
-        disabled={value === 11}
+        onClick={() => setInputValue((state) => state + 1)}
+        disabled={inputValue === 8}
       >
         <Plus size={14} />
       </IconButtonComponent>

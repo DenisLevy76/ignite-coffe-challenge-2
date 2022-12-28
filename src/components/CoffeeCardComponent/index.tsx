@@ -1,4 +1,6 @@
 import { ShoppingCartSimple } from 'phosphor-react'
+import { useState } from 'react'
+import { useCart } from '../../hooks/useCart'
 import { IconButtonComponent } from '../IconButtonComponent'
 import { InputNumberComponent } from '../InputNumberComponent'
 import {
@@ -12,14 +14,17 @@ import {
 import { coffeeCardComponentProps } from './types'
 
 export const CoffeeCardComponent: React.FC<coffeeCardComponentProps> = ({
-  product: { imageUrl, price, shortDescription, tags, title, imageAlt, id },
+  product,
 }) => {
+  const { addCoffeeToCart } = useCart()
+
+  const [quantity, setQuantity] = useState<number>(0)
   return (
     <Container>
       <CoffeeWrapper>
-        <CoffeeImage src={imageUrl} alt={imageAlt} />
+        <CoffeeImage src={product.imageUrl} alt={product.imageAlt} />
         <ul>
-          {tags.map(
+          {product.tags.map(
             (tag, index) =>
               index < 3 && (
                 <li key={tag}>
@@ -29,22 +34,25 @@ export const CoffeeCardComponent: React.FC<coffeeCardComponentProps> = ({
           )}
         </ul>
 
-        <h2 className="coffee__title">{title}</h2>
-        <p className="coffee__description">{shortDescription}</p>
+        <h2 className="coffee__title">{product.title}</h2>
+        <p className="coffee__description">{product.shortDescription}</p>
       </CoffeeWrapper>
       <CardFooter>
         <CoffeePrice>
-          R$ <strong>{price.toFixed(2).replace('.', ',')}</strong>
+          R$ <strong>{product.price.toFixed(2).replace('.', ',')}</strong>
         </CoffeePrice>
         <div className="cart__button-wrapper">
           <InputNumberComponent
-            id={`${id}Quantity`}
+            id={`${product.id}Quantity`}
             ariaLabel="Quantidade"
+            onValueChange={(value) => setQuantity(value)}
             readOnly
           />
           <IconButtonComponent
+            type="button"
             ariaLabel="Adicionar ao carrinho"
             title="Adicionar ao carrinho"
+            onClick={() => addCoffeeToCart({ ...product, quantity })}
           >
             <ShoppingCartSimple size={24} weight="fill" />
           </IconButtonComponent>

@@ -1,11 +1,14 @@
 import { Trash } from 'phosphor-react'
 import { InputNumberComponent } from '../InputNumberComponent'
 import { Container, RemoveFromCartButton } from './styles'
-import { ICoffee } from '../../@types/ICoffee'
+import { useCart } from '../../hooks/useCart'
+import { ICoffeeCart } from '../../contexts/CartContext/types'
+import { numberToPrice } from '../../pages/utils/numberToPrice'
 
-export const CoffeeCardListComponent: React.FC<{ coffee: ICoffee }> = ({
+export const CoffeeCardListComponent: React.FC<{ coffee: ICoffeeCart }> = ({
   coffee,
 }) => {
+  const { removeCoffeeFromCart, updateCoffeeQuantity } = useCart()
   return (
     <Container>
       <img src={coffee.imageUrl} alt={coffee.imageAlt} />
@@ -15,13 +18,18 @@ export const CoffeeCardListComponent: React.FC<{ coffee: ICoffee }> = ({
           <InputNumberComponent
             ariaLabel="Quantidade de Americanos"
             id="american-quantity"
+            value={coffee.quantity}
+            onValueChange={(value) => updateCoffeeQuantity(coffee.id, value)}
           />
-          <RemoveFromCartButton>
+          <RemoveFromCartButton
+            type="button"
+            onClick={() => removeCoffeeFromCart(coffee.id)}
+          >
             <Trash size={20} /> Remover
           </RemoveFromCartButton>
         </div>
       </div>
-      <strong className="price">{coffee.price}</strong>
+      <strong className="price">{numberToPrice(coffee.price)}</strong>
     </Container>
   )
 }
