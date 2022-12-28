@@ -7,8 +7,8 @@ export const InputComponent: React.FC<InputComponentProps> = ({
   ...props
 }) => {
   return (
-    <Container>
-      <input {...props} id={id} required={required} placeholder="Complemento" />
+    <Container className={`input-wrapper-${id}`}>
+      <input {...props} id={id} required={required} />
       {!required && (
         <label htmlFor={id}>
           <i>Optional</i>
