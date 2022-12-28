@@ -5,7 +5,7 @@ export const Container = styled.label`
     background: ${theme.colors.baseButton};
     border-radius: 8px;
     display: flex;
-    padding: 0.75rem 0.5rem;
+    padding: 0.375rem 0.5rem;
     max-width: 4.5rem;
 
     > input {

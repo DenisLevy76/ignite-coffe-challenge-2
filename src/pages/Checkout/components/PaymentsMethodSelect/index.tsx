@@ -15,7 +15,7 @@ export const PaymentsMethodSelect: React.FC<BaseCardComponentProps> = ({
     <Container>
       {icon}
       {label}
-      <input type="radio" style={{ display: 'none' }} {...props} />
+      <input type="radio" {...props} />
     </Container>
   )
 }

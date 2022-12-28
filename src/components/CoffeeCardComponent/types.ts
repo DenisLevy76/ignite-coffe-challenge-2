@@ -1,5 +1,5 @@
-import { Icoffee } from '../../@types/ICoffee'
+import { ICoffee } from '../../@types/ICoffee'
 
 export interface coffeeCardComponentProps {
-  product: Icoffee
+  product: ICoffee
 }

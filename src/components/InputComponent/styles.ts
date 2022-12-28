@@ -11,7 +11,7 @@ export const Container = styled.label`
     padding-right: 0.75rem;
 
     &:focus-within {
-      outline: ${({ theme }) => theme.colors.outline};
+      outline: 1px solid ${({ theme }) => theme.colors.yellow};
     }
 
     > input {

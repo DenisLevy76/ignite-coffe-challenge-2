@@ -10,6 +10,7 @@ import { ThemeContext } from 'styled-components'
 import { ContainerComponent } from '../../components/ContainerComponent'
 import { InputComponent } from '../../components/InputComponent'
 import { BaseCardComponent } from './components/BaseCard'
+import { OrderSumaryComponent } from './components/OrderSumaryComponent'
 import { PaymentsMethodSelect } from './components/PaymentsMethodSelect'
 import { AddressDiv, Container, PaymentFieldset } from './styles'
 
@@ -74,22 +75,26 @@ export const Checkout: React.FC = () => {
                 icon={<CreditCard size={20} />}
                 name="paymentMethod"
                 label="Cartão de crédito"
+                required
               />
               <PaymentsMethodSelect
                 icon={<Bank size={20} />}
                 name="paymentMethod"
                 label="Cartão de débito"
+                required
               />
               <PaymentsMethodSelect
                 icon={<Money size={20} />}
                 name="paymentMethod"
                 label="Dinheiro"
+                required
               />
             </PaymentFieldset>
           </BaseCardComponent>
         </fieldset>
         <div>
           <h1>Cafés selecionados</h1>
+          <OrderSumaryComponent />
         </div>
       </ContainerComponent>
     </Container>

@@ -12,6 +12,11 @@ export const Container = styled.label`
   font-size: 0.75rem;
   white-space: nowrap;
 
+  > input[type='radio'] {
+    visibility: hidden;
+    width: 0px;
+  }
+
   svg {
     color: ${({ theme }) => theme.colors.purple};
   }

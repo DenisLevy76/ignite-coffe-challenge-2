@@ -1,6 +1,6 @@
-import { Icoffee } from '../../../@types/ICoffee'
+import { ICoffee } from '../../../@types/ICoffee'
 
-export const COFFEES: Icoffee[] = [
+export const COFFEES: ICoffee[] = [
   {
     id: 1,
     tags: ['tradicional'],

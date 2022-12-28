@@ -1,4 +1,4 @@
-export interface Icoffee {
+export interface ICoffee {
   id: number
   title: string
   imageUrl: string
