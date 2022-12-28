@@ -1,10 +1,17 @@
-import { CurrencyDollar, MapPinLine } from 'phosphor-react'
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from 'phosphor-react'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { ContainerComponent } from '../../components/ContainerComponent'
 import { InputComponent } from '../../components/InputComponent'
 import { BaseCardComponent } from './components/BaseCard'
-import { AddressDiv, Container } from './styles'
+import { PaymentsMethodSelect } from './components/PaymentsMethodSelect'
+import { AddressDiv, Container, PaymentFieldset } from './styles'
 
 export const Checkout: React.FC = () => {
   const { colors } = useContext(ThemeContext)
@@ -61,7 +68,25 @@ export const Checkout: React.FC = () => {
             icon={<CurrencyDollar size={24} color={colors.purple} />}
             title="Pagamento"
             description="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
-          ></BaseCardComponent>
+          >
+            <PaymentFieldset>
+              <PaymentsMethodSelect
+                icon={<CreditCard size={20} />}
+                name="paymentMethod"
+                label="Cartão de crédito"
+              />
+              <PaymentsMethodSelect
+                icon={<Bank size={20} />}
+                name="paymentMethod"
+                label="Cartão de débito"
+              />
+              <PaymentsMethodSelect
+                icon={<Money size={20} />}
+                name="paymentMethod"
+                label="Dinheiro"
+              />
+            </PaymentFieldset>
+          </BaseCardComponent>
         </fieldset>
         <div>
           <h1>Cafés selecionados</h1>

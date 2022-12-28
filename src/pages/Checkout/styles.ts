@@ -51,4 +51,8 @@ export const AddressDiv = styled.div`
     grid-area: complement;
   }
 `
-export const PaymentFieldset = styled.div``
+export const PaymentFieldset = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+`
