@@ -25,7 +25,10 @@ export const SuccessOrder: React.FC = () => {
                   <MapPin size={20} weight="fill" />
                 </span>
                 <span>
-                  Entrega em <strong>{address.street}</strong>
+                  Entrega em
+                  <strong>
+                    {address.street}, {address.streetNumber}
+                  </strong>
                   <br />
                   {address.district} - {address.city}, {address.state}
                 </span>
