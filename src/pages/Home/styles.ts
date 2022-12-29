@@ -55,6 +55,7 @@ export const AboutSection = styled.section`
 
 export const CoffeesTitle = styled.h2`
   font-size: 2rem;
+  margin-top: 2rem;
 `
 
 export const CoffeeList = styled.ul`

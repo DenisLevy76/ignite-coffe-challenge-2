@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.main`
   padding-bottom: 4rem;
+  margin-top: 2.5rem;
   > form {
     display: grid;
     grid-template-columns: 1fr 448px;

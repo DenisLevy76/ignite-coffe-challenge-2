@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.main`
   > section {
     display: grid;
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     column-gap: 7rem;
@@ -25,6 +25,15 @@ export const Container = styled.main`
 
     > img {
       width: 100%;
+    }
+
+    @media (max-width: 850px) {
+      display: flex;
+      flex-direction: column;
+
+      > img {
+        margin-top: 2rem;
+      }
     }
   }
 `
@@ -49,6 +58,7 @@ export const OrderDataWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1rem;
 
     > p {
       display: flex;
