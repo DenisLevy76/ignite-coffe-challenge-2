@@ -12,6 +12,7 @@ export const Container = styled.div`
 export const AboutSection = styled.section`
   padding: 5rem 0;
   background: url(/images/Background.png);
+  background-size: cover;
 
   > div {
     display: flex;

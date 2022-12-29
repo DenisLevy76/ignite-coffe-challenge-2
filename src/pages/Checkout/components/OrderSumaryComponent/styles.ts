@@ -52,9 +52,14 @@ export const ButtonComponent = styled.button`
     width: 100%;
     border-radius: 8px;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: ${theme.colors.purpleDark};
       cursor: pointer;
+    }
+
+    &:disabled {
+      filter: opacity(0.5);
+      cursor: not-allowed;
     }
   `}
 `
@@ -63,7 +68,7 @@ export const ConfirmOrderButton = styled(ButtonComponent)`
   background: ${({ theme }) => theme.colors.yellow};
   margin-top: 1.5rem;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: ${({ theme }) => theme.colors.yellowDark};
   }
 `

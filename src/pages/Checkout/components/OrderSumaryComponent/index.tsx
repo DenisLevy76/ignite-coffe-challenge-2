@@ -10,6 +10,7 @@ import {
 
 export const OrderSumaryComponent: React.FC = () => {
   const { cart, totalItemsPrice, deliveryFee, totalPrice } = useCart()
+
   return (
     <Container>
       <CoffeesList>
@@ -39,7 +40,9 @@ export const OrderSumaryComponent: React.FC = () => {
           <strong>{numberToPrice(totalPrice)}</strong>
         </span>
       </OrderPrices>
-      <ConfirmOrderButton type="submit">Confirmar pedido</ConfirmOrderButton>
+      <ConfirmOrderButton type="submit" disabled={cart.length <= 0}>
+        Confirmar pedido
+      </ConfirmOrderButton>
     </Container>
   )
 }
