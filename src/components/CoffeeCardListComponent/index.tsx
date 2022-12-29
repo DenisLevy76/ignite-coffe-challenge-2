@@ -1,6 +1,5 @@
 import { Trash } from 'phosphor-react'
-import { InputNumberComponent } from '../InputNumberComponent'
-import { Container, RemoveFromCartButton } from './styles'
+import { Container, QuantityInput, RemoveFromCartButton } from './styles'
 import { useCart } from '../../hooks/useCart'
 import { ICoffeeCart } from '../../contexts/CartContext/types'
 import { numberToPrice } from '../../pages/utils/numberToPrice'
@@ -15,11 +14,12 @@ export const CoffeeCardListComponent: React.FC<{ coffee: ICoffeeCart }> = ({
       <div className="coffee-list__data">
         <p className="coffee__name">{coffee.title}</p>
         <div className="controls">
-          <InputNumberComponent
+          <QuantityInput
             ariaLabel="Quantidade de Americanos"
             id="american-quantity"
             value={coffee.quantity}
             onValueChange={(value) => updateCoffeeQuantity(coffee.id, value)}
+            readOnly
           />
           <RemoveFromCartButton
             type="button"

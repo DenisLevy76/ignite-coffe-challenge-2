@@ -18,7 +18,7 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
   }, [inputValue])
 
   return (
-    <Container htmlFor={id} aria-label={ariaLabel}>
+    <Container htmlFor={id} aria-label={ariaLabel} className={`input-number`}>
       <IconButtonComponent
         type="button"
         background={false}
@@ -27,7 +27,7 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
         onClick={() => setInputValue((state) => state - 1)}
         disabled={inputValue === 1}
       >
-        <Minus size={14} />
+        <Minus size={16} />
       </IconButtonComponent>
       <input
         type="number"
@@ -45,7 +45,7 @@ export const InputNumberComponent: React.FC<InputNumberComponentProps> = ({
         onClick={() => setInputValue((state) => state + 1)}
         disabled={inputValue === 8}
       >
-        <Plus size={14} />
+        <Plus size={16} />
       </IconButtonComponent>
     </Container>
   )

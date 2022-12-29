@@ -66,6 +66,12 @@ export const AddressDiv = styled.div`
   .input-wrapper-complement {
     grid-area: complement;
   }
+
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 `
 export const PaymentFieldset = styled.div`
   display: grid;

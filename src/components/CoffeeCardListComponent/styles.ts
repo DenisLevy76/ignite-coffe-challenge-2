@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { ButtonComponent } from '../../pages/Checkout/components/OrderSumaryComponent/styles'
+import { InputNumberComponent } from '../InputNumberComponent'
 
 export const Container = styled.div`
   display: flex;
@@ -21,9 +22,10 @@ export const Container = styled.div`
 
   .controls {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
   }
 
   > .price {
@@ -32,6 +34,30 @@ export const Container = styled.div`
     width: 4rem;
     text-align: right;
     font-size: 1rem;
+  }
+
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    gap: 1rem;
+
+    > img {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    .input-number {
+      max-width: 100% !important;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      width: 100%;
+      text-align: center;
+    }
   }
 `
 
@@ -42,12 +68,11 @@ export const RemoveFromCartButton = styled(ButtonComponent)`
     font-weight: 400;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.25rem;
 
-    padding: 0.375rem 0.5rem;
-    font-size: 0.75rem;
-
-    width: auto;
+    padding: 0.75rem 0.75rem;
+    font-size: 1.25rem;
 
     > svg {
       color: ${theme.colors.purple};
@@ -57,4 +82,10 @@ export const RemoveFromCartButton = styled(ButtonComponent)`
       background: ${theme.colors.baseHover};
     }
   `}
+`
+
+export const QuantityInput = styled(InputNumberComponent)`
+  @media (max-width: 850px) {
+    font-size: 2rem;
+  }
 `
