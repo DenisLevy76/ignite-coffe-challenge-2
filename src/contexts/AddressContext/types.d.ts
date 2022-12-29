@@ -1,4 +1,4 @@
 export interface AddressContextData {
   address: any
-  setAddress: React.Dispatch<any>
+  saveAddress: (address: any) => void
 }

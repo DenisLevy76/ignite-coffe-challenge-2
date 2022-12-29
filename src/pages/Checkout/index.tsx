@@ -7,6 +7,7 @@ import {
 } from 'phosphor-react'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import { ContainerComponent } from '../../components/ContainerComponent'
 import { InputComponent } from '../../components/InputComponent'
@@ -20,11 +21,16 @@ import { AddressDiv, Container, PaymentFieldset } from './styles'
 export const Checkout: React.FC = () => {
   const { colors } = useContext(ThemeContext)
   const { register, handleSubmit } = useForm()
-  const { cart } = useCart()
-  const { setAddress } = useUserAddress()
+  const { cart, clearCart } = useCart()
+  const { saveAddress } = useUserAddress()
+  const navigate = useNavigate()
 
   const handleCreateOrder = (data: any) => {
-    if (cart.length > 0 && data.paymentMethod) setAddress(data)
+    if (cart.length > 0 && data.paymentMethod) {
+      saveAddress(data)
+      navigate('/success-order')
+      clearCart()
+    }
   }
 
   return (
@@ -103,20 +109,20 @@ export const Checkout: React.FC = () => {
                 icon={<CreditCard size={20} />}
                 {...register('paymentMethod')}
                 label="Cartão de crédito"
-                value="creditCard"
+                value="Cartão de crédito"
               />
               <PaymentsMethodSelect
                 icon={<Bank size={20} />}
                 {...register('paymentMethod')}
                 label="Cartão de débito"
-                value="debitCard"
+                value="Cartão de débito"
               />
 
               <PaymentsMethodSelect
                 icon={<Money size={20} />}
                 {...register('paymentMethod')}
                 label="Dinheiro"
-                value="money"
+                value="Dinheiro"
               />
             </PaymentFieldset>
           </BaseCardComponent>

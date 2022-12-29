@@ -13,6 +13,8 @@ export const AboutSection = styled.section`
   padding: 5rem 0;
   background: url(/images/Background.png);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
 
   > div {
     display: flex;

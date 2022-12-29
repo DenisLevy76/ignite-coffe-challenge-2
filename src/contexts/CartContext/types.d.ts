@@ -12,4 +12,5 @@ export interface CartContextData {
   addCoffeeToCart: (coffee: ICoffeeCart) => void
   removeCoffeeFromCart: (coffeeId: number) => void
   updateCoffeeQuantity: (coffeeId: number, quantity: number) => void
+  clearCart: () => void
 }

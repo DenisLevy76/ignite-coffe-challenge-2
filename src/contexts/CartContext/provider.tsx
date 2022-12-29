@@ -48,6 +48,10 @@ export const CartContextProvider: React.FC<{ children: ReactNode }> = ({
     setCart((state) => state.filter((coffee) => coffee.id !== coffeeId))
   }
 
+  const clearCart = () => {
+    setCart([])
+  }
+
   const updateCoffeeQuantity = (coffeeId: number, quantity: number) => {
     if (quantity === 0) return removeCoffeeFromCart(coffeeId)
     if (quantity === 5) return
@@ -77,6 +81,7 @@ export const CartContextProvider: React.FC<{ children: ReactNode }> = ({
         addCoffeeToCart,
         removeCoffeeFromCart,
         updateCoffeeQuantity,
+        clearCart,
       }}
     >
       {children}
