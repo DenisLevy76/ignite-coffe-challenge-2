@@ -13,11 +13,17 @@ export const OrderSumaryComponent: React.FC = () => {
   return (
     <Container>
       <CoffeesList>
-        {cart.map((coffee) => (
-          <li key={coffee.id}>
-            <CoffeeCardListComponent coffee={coffee} />
+        {cart.length > 0 ? (
+          cart.map((coffee) => (
+            <li key={coffee.id}>
+              <CoffeeCardListComponent coffee={coffee} />
+            </li>
+          ))
+        ) : (
+          <li>
+            <strong>Nenhum produto adicionardo ao carrinho</strong>
           </li>
-        ))}
+        )}
       </CoffeesList>
       <OrderPrices>
         <span>
@@ -33,7 +39,7 @@ export const OrderSumaryComponent: React.FC = () => {
           <strong>{numberToPrice(totalPrice)}</strong>
         </span>
       </OrderPrices>
-      <ConfirmOrderButton>Confirmar pedido</ConfirmOrderButton>
+      <ConfirmOrderButton type="submit">Confirmar pedido</ConfirmOrderButton>
     </Container>
   )
 }

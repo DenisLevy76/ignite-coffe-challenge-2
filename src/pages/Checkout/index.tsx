@@ -6,6 +6,7 @@ import {
   Money,
 } from 'phosphor-react'
 import { useContext } from 'react'
+import { useForm } from 'react-hook-form'
 import { ThemeContext } from 'styled-components'
 import { ContainerComponent } from '../../components/ContainerComponent'
 import { InputComponent } from '../../components/InputComponent'
@@ -16,50 +17,66 @@ import { AddressDiv, Container, PaymentFieldset } from './styles'
 
 export const Checkout: React.FC = () => {
   const { colors } = useContext(ThemeContext)
+  const { register, handleSubmit } = useForm()
+
+  const handleCreateOrder = (data: any) => {
+    console.log(data)
+  }
+
   return (
     <Container>
-      <ContainerComponent as={'form'} onSubmit={() => console.log('teste')}>
+      <ContainerComponent
+        as={'form'}
+        onSubmit={handleSubmit(handleCreateOrder)}
+      >
         <fieldset>
-          <h1>Complete seu pedido</h1>
+          <h2>Complete seu pedido</h2>
           <BaseCardComponent
             icon={<MapPinLine size={24} color={colors.yellowDark} />}
             title="Endereço de entrega"
             description="Informe o endereço onde deseja receber seu pedido"
           >
             <AddressDiv>
-              <InputComponent id="CEP" name="CEP" placeholder="CEP" required />
+              <InputComponent
+                id="CEP"
+                placeholder="CEP"
+                required
+                {...register('CEP')}
+              />
               <InputComponent
                 id="street"
-                name="street"
+                {...register('street')}
                 placeholder="Rua"
                 required
               />
               <InputComponent
                 id="streetNumber"
-                name="streetNumber"
+                {...register('streetNumber')}
                 placeholder="Número"
                 required
               />
               <InputComponent
                 id="complement"
-                name="complement"
+                {...register('complement')}
                 placeholder="Complemento"
               />
+
               <InputComponent
                 id="district"
-                name="district"
+                {...register('district')}
                 placeholder="Bairro"
                 required
               />
               <InputComponent
                 id="city"
-                name="city"
+                {...register('city')}
                 placeholder="Cidade"
                 required
               />
+
               <InputComponent
                 id="state"
-                name="state"
+                {...register('state')}
                 placeholder="UF"
                 required
               />
@@ -73,27 +90,31 @@ export const Checkout: React.FC = () => {
             <PaymentFieldset>
               <PaymentsMethodSelect
                 icon={<CreditCard size={20} />}
-                name="paymentMethod"
+                {...register('paymentMethod')}
                 label="Cartão de crédito"
+                value="creditCard"
                 required
               />
               <PaymentsMethodSelect
                 icon={<Bank size={20} />}
-                name="paymentMethod"
-                label="Cartão de débito"
+                {...register('paymentMethod')}
+                label="debitCard"
+                value="debitCard"
                 required
               />
+
               <PaymentsMethodSelect
                 icon={<Money size={20} />}
-                name="paymentMethod"
+                {...register('paymentMethod')}
                 label="Dinheiro"
+                value="money"
                 required
               />
             </PaymentFieldset>
           </BaseCardComponent>
         </fieldset>
-        <div>
-          <h1>Cafés selecionados</h1>
+        <div className="checkout__order-sumary">
+          <h2>Cafés selecionados</h2>
           <OrderSumaryComponent />
         </div>
       </ContainerComponent>

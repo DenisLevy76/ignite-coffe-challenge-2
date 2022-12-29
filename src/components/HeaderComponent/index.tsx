@@ -1,10 +1,11 @@
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../hooks/useCart'
 import { ContainerComponent } from '../ContainerComponent'
 import { CartLink, Container, HeaderNav } from './styles'
 
 export const HeaderComponent: React.FC = () => {
-  const cart = []
+  const { cart } = useCart()
   return (
     <Container>
       <ContainerComponent>

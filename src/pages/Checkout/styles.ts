@@ -13,6 +13,12 @@ export const Container = styled.main`
       gap: 1rem;
     }
 
+    > .checkout__order-sumary {
+      > h2 {
+        margin-bottom: 1rem;
+      }
+    }
+
     @media (max-width: 1120px) {
       grid-template-columns: 1.5fr 1fr;
     }
