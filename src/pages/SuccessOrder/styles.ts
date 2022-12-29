@@ -13,6 +13,8 @@ export const Container = styled.main`
 
     > h1 {
       grid-area: title;
+      color: ${({ theme }) => theme.colors.yellowDark};
+      font-size: 2rem;
     }
 
     > p {
