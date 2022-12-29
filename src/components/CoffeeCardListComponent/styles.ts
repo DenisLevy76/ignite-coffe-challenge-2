@@ -50,14 +50,12 @@ export const Container = styled.div`
       max-width: 100% !important;
     }
 
-    .control {
-      flex-wrap: wrap;
-      align-items: flex-start;
+    .controls {
       flex-direction: column;
     }
 
     .price {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       width: 100%;
       text-align: center;
     }

@@ -27,10 +27,16 @@ export const HeaderNav = styled.nav`
     align-items: center;
     gap: 0.5rem;
 
-    padding: 10px 8px;
+    padding: 0.625rem 0.5rem;
     background: ${({ theme }) => theme.colors.purpleLight};
     color: ${({ theme }) => theme.colors.purpleDark};
     border-radius: 8px;
+
+    @media (max-width: 500px) {
+      font-size: 0.75rem;
+      padding: 0.625rem 0.4rem;
+      gap: 0.25rem;
+    }
   }
 `
 
