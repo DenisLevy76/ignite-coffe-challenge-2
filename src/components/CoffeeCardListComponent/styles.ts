@@ -23,9 +23,6 @@ export const Container = styled.div`
   .controls {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
   }
 
   > .price {
@@ -36,7 +33,7 @@ export const Container = styled.div`
     font-size: 1rem;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 350px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,6 +48,12 @@ export const Container = styled.div`
 
     .input-number {
       max-width: 100% !important;
+    }
+
+    .control {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      flex-direction: column;
     }
 
     .price {
@@ -68,24 +71,31 @@ export const RemoveFromCartButton = styled(ButtonComponent)`
     font-weight: 400;
     display: flex;
     align-items: center;
-    justify-content: center;
+
     gap: 0.25rem;
 
-    padding: 0.75rem 0.75rem;
-    font-size: 1.25rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
 
     > svg {
       color: ${theme.colors.purple};
     }
 
     &:hover {
-      background: ${theme.colors.baseHover};
+      background: ${theme.colors.baseHover} !important;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 1.4rem;
+      padding: 1rem 0.75rem;
+      justify-content: center;
     }
   `}
 `
 
 export const QuantityInput = styled(InputNumberComponent)`
-  @media (max-width: 850px) {
-    font-size: 2rem;
+  @media (max-width: 360px) {
+    font-size: 1.5rem;
+    padding: 0.75rem 0.75rem;
   }
 `
