@@ -1,4 +1,6 @@
+import { CheckoutFormData } from '../../pages/Checkout/validations'
+
 export interface AddressContextData {
-  address: any
-  saveAddress: (address: any) => void
+  address: CheckoutFormData | null
+  saveAddress: (address: CheckoutFormData | null) => void
 }

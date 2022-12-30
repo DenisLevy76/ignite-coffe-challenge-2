@@ -18,14 +18,19 @@ import { OrderSumaryComponent } from './components/OrderSumaryComponent'
 import { PaymentsMethodSelect } from './components/PaymentsMethodSelect'
 import { AddressDiv, Container, PaymentFieldset } from './styles'
 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { CheckoutFormData, CheckoutFormSchema } from './validations'
+
 export const Checkout: React.FC = () => {
   const { colors } = useContext(ThemeContext)
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm<CheckoutFormData>({
+    resolver: zodResolver(CheckoutFormSchema),
+  })
   const { cart, clearCart } = useCart()
   const { saveAddress } = useUserAddress()
   const navigate = useNavigate()
 
-  const handleCreateOrder = (data: any) => {
+  const handleCreateOrder = (data: CheckoutFormData) => {
     if (cart.length > 0 && data.paymentMethod) {
       saveAddress(data)
       navigate('/success-order')
